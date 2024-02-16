@@ -8,7 +8,8 @@ test('wishlist', async ({ page }) => {
     await page.getByRole('button').getByText('Login').click();
     await page.waitForTimeout(500);
     await page.goto('https://shopdemo-alex-hot.koyeb.app/shop');
-    await page.getByRole('graphics-symbol').first().click();
+    await page.locator(`.heart-icon`).first().click()
     await page.goto('https://shopdemo-alex-hot.koyeb.app/dashboard/wishlist');
     await page.getByText('CHERRY TOMATOES')
+    await page.locator(`.custom-btn-danger`).click() // тут я удаляю из вишлиста айтем, чтобы при повторном запуске его можно было опять добавить
 });
