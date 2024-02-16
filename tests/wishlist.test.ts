@@ -8,7 +8,7 @@ test('wishlist', async ({ page }) => {
     await page.getByRole('button').getByText('Login').click();
     await page.waitForTimeout(500);
     await page.goto('https://shopdemo-alex-hot.koyeb.app/shop');
-    //await page.getByRole('LabelText').click();
+    await page.getByRole('graphics-symbol').first().click();
     await page.goto('https://shopdemo-alex-hot.koyeb.app/dashboard/wishlist');
     await page.getByText('CHERRY TOMATOES')
 });
